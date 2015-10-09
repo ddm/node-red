@@ -18,6 +18,12 @@ var path = require("path");
 
 module.exports = function(grunt) {
 
+    var nodemonArgs = ["-v"];
+    var flowFile = grunt.option('flowFile');
+    if (flowFile) {
+        nodemonArgs.push(flowFile);
+    }
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         paths: {
@@ -112,7 +118,6 @@ module.exports = function(grunt) {
                   "editor/js/ui/sidebar.js",
                   "editor/js/ui/palette.js",
                   "editor/js/ui/tab-info.js",
-                  "editor/js/ui/tab-config.js",
                   "editor/js/ui/editor.js",
                   "editor/js/ui/clipboard.js",
                   "editor/js/ui/library.js",
@@ -229,10 +234,10 @@ module.exports = function(grunt) {
             dev: {
                 script: 'red.js',
                 options: {
-                    args:['-v'],
+                    args: nodemonArgs,
                     ext: 'js,html,json',
                     watch: [
-                        'red','nodes'
+                        'red','nodes','locales'
                     ]
                 }
             }
