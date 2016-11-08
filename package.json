@@ -1,5 +1,5 @@
 {
-    "name"         : "node-red",
+    "name"         : "node-red-ddm",
     "version"      : "0.15.2",
     "description"  : "A visual tool for wiring the Internet of Things",
     "homepage"     : "http://nodered.org",
@@ -87,6 +87,6 @@
         "supertest": "2.0.0"
     },
     "engines": {
-        "node": ">=0.10"
+        "node": ">=4.0"
     }
 }
